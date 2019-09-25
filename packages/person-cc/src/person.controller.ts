@@ -7,7 +7,8 @@ import {
   Param
 } from '@worldsibu/convector-core';
 
-import { Person } from './person.model';
+import { Participant } from 'participant-cc';
+import { Person, Attribute } from './person.model';
 
 @Controller('person')
 export class PersonController extends ConvectorController<ChaincodeTx> {
