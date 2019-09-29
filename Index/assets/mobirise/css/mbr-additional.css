@@ -2,6 +2,80 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap);
 
 
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap);
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  margin:10px;
+  height: 300px;
+}
+
+.btn1:hover{
+  color:#2A89BF;
+  cursor: pointer;
+}
+
+.box {
+	width:70%;
+	height:200px;
+	background:#efefef;
+  margin:40px auto;
+  text-align:center;
+}
+
+
+.img1{
+  margin:20px;
+}
+ .img2{
+  margin:10px;
+
+}
+.box h4{
+  margin:10px;
+  color:#5C5854;
+}
+
+.box p{
+  color:#CCC4CC;
+}
+
+.insiderow p{
+  color:#5C5854;
+}
+
+
+
+.effect1 {
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.insiderow p{
+  display: inline-block;
+}
+
+.insiderow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 
 
@@ -893,7 +967,7 @@ iframe.lazy-placeholder,
 .lazy-placeholder:after {
   content: '';
   position: absolute;
-  width: 100px;
+  width: 10n0px;
   height: 100px;
   background: transparent no-repeat center;
   background-size: contain;
@@ -1502,6 +1576,28 @@ section.lazy-placeholder:after {
 }
 .cid-rD4fcftppP .card-title,
 .cid-rD4fcftppP .card-img {
+  color: #5c5854;
+}
+.cid-rD4flbHS7k {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #ffffff;
+}
+.cid-rD4flbHS7k .mbr-text {
+  color: #ccc4cc;
+}
+.cid-rD4flbHS7k h4 {
+  text-align: center;
+}
+.cid-rD4flbHS7k p {
+  text-align: center;
+}
+.cid-rD4flbHS7k .card-img span {
+  font-size: 96px;
+  color: #149dcc;
+}
+.cid-rD4flbHS7k .card-title,
+.cid-rD4flbHS7k .card-img {
   color: #5c5854;
 }
 .cid-rD3SPCfqQ3 {
