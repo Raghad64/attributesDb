@@ -1481,6 +1481,7 @@ section.lazy-placeholder:after {
 .cid-rD44rkAFDV .dropdown-item:hover {
   color: #767676 !important;
 }
+
 .cid-rD4fcftppP {
   padding-top: 90px;
   padding-bottom: 90px;
@@ -1503,6 +1504,21 @@ section.lazy-placeholder:after {
 .cid-rD4fcftppP .card-title,
 .cid-rD4fcftppP .card-img {
   color: #5c5854;
+
+.cid-rD3SUo3dFC {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-image: url("../../../assets/images/bg-1-2000x1181.png");
+}
+.cid-rD3SUo3dFC H3 {
+  color: #ffffff;
+  text-align: left;
+}
+.cid-rD3SUo3dFC .mbr-text,
+.cid-rD3SUo3dFC .mbr-section-btn {
+  color: #232323;
+  text-align: left;
+
 }
 .cid-rD3SPCfqQ3 {
   padding-top: 30px;
