@@ -34,26 +34,25 @@ shipmentsArray.addShipment(newShipment2);
 shipmentsArray.addShipment(newShipment3);
 shipmentsArray.addShipment(newShipment4);
 
-var shipmentsRow = $('#Row1');
-var shipmentTemplate = $('#shipmentTemplate');
+// var shipmentsRow = $('#Row1');
+// var shipmentTemplate = $('#shipmentTemplate');
 
-var pendingRow= $('#Row2');
-var pendingTemplate = $('#pendingTemplate');
+// var pendingRow= $('#Row2');
+// var pendingTemplate = $('#pendingTemplate');
 
 
 for(i=1;i<shipmentsArray.length;i++){
     if(shipmentsArray[i].getStatus=="Activated"||shipmentsArray[i].getStatus=="Declineed"){
-        ideaTemplate.find('#shipmentID').text(shipmentsArray.getId[i]);
-        ideaTemplate.find('#shipmentStatus').text(shipmentsArray.getId[i]);
-
+        // shipmentTemplate.find('#shipmentID').text(shipmentsArray.getId[i]);
+        // shipmentTemplate.find('#shipmentStatus').text(shipmentsArray.getId[i]);
+        // shipmentsRow.append(shipmentTemplate.html());
     }
    
 
     else if (shipmentsArray[i].getStatus=="Pending"){
-        ideaTemplate.find('#ideaTitle').text(idea[0]);
-        ideaTemplate.find('#desc').text(idea[7]);
-
-        ideaRow.append(ideaTemplate.html());s
+        // pendingTemplate.find('#shipmentID').text(shipmentsArray.getId[i]);
+        // pendingTemplate.find('#shipmentStatus').text(shipmentsArray.getId[i]);
+        // pendingRow.append(pendingTemplate.html());
     }
 
 }
