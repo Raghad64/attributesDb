@@ -13,12 +13,12 @@ export class Attribute extends ConvectorModel<Attribute>{
   public readonly type = 'io.worldsibu.attribute';
 
   @Required()
-  public content: any;
+  public content: any;//what does he changed
 
   @Required()
   @ReadOnly()
   @Validate(yup.number())
-  public issuedDate: number;
+  public issuedDate: number;//when 
 
   public expiresDate: Date;
 
@@ -28,7 +28,7 @@ export class Attribute extends ConvectorModel<Attribute>{
 
   @Required()
   @Validate(yup.string())
-  public certifierID: string;
+  public certifierID: string;//the participant id who gives certificates to persons
 }
 
 export class Person extends ConvectorModel<Person> {
@@ -41,5 +41,5 @@ export class Person extends ConvectorModel<Person> {
   public name: string;
 
   @Validate(yup.array(Attribute.schema()))
-  public attributes: Array<Attribute>;
+  public attributes: Array<Attribute>;//what each person can do as attrbutes
 }

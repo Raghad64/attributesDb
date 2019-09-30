@@ -13,33 +13,36 @@ import { Person, Attribute } from './person.model';
 @Controller('person')
 export class PersonController extends ConvectorController<ChaincodeTx> {
 
+  //a function to create a new person(USER) 
   @Invokable()
   public async create(
     @Param(Person)
     person: Person
   ) {
-    let exists = await Person.getOne(person.id);
+    let exists = await Person.getOne(person.id);//if there is another person with this id
 
-    if (!!exists && exists.id) {//validate whether or not a Person already exists with that id.
+    if (!!exists && exists.id) {
+      //validate whether or not a Person already exists with that id.
       throw new Error('There is a person registered with that Id already');
     }
-    let gov = await Participant.getOne('gov');//declearing the participant (in our case Sadara and the customs)
 
-    if (!gov || !gov.identities) {//making sure that this participant exist
+    let gov = await Participant.getOne('Sadara');//declearing the participant (in our case Sadara and the customs)
+
+    if (!gov || !gov.identities) {//making sure that this participant(Customs or GLOBE) exist
       throw new Error('No government identity has been registered yet');
     }
+
     const govActiveIdentity = gov.identities.filter(identity => identity.status === true)[0];//get the fingerprint of the Network Participant with the id gov
 
     if (this.sender !== govActiveIdentity.fingerprint) {//check that the property this.sender equals to the fingerprint of the Network Participant with the id gov
       throw new Error(`Just the government - ID=gov - can create people - requesting organization was ${this.sender}`);
     }
-
-    await person.save();//if everything goes OK then the data will be created in the ledger
+    await person.save();//if everything goes OK then the data will be created in the ledger associated with its participant 
   }
 
   @Invokable()
-  public async addAttribute(
-    
+  public async addAttribute(// giving certification to person 
+
     @Param(yup.string())
     personId: string,
     @Param(Attribute.schema())
@@ -52,12 +55,13 @@ export class PersonController extends ConvectorController<ChaincodeTx> {
       throw new Error(`No participant found with id ${attribute.certifierID}`);
     }
 
+    //otherwise (founded)
     const participantActiveIdentity = participant.identities.filter(
       identity => identity.status === true)[0];
 
     if (this.sender !== participantActiveIdentity.fingerprint) {
       throw new Error(`Requester identity cannot sign with the current certificate ${this.sender}. This means that the user requesting the tx and the user set in the param certifierId do not match`);
-    }
+    }//the one who is making the request to create person(Sadara)
 
     let person = await Person.getOne(personId);
 
